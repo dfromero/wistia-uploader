@@ -1,0 +1,14 @@
+<h2>Wistia Uploader</h2>
+<form id="fileupload" enctype="multipart/form-data">
+    <input type="file" name="file">
+</form>
+<div class="progress" ng-if="$ctrl.progress > 0">
+    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" ng-style="{width: $ctrl.progress + '%'}">
+        {{$ctrl.progress}}%
+    </div>
+</div>
+<div id="video-embed">
+    <script dynamic-src="{{$ctrl.jsonpUrl}}" async></script>
+    <script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
+    <div class="wistia_embed" ng-class="$ctrl.wistiaIdClass" style="height:480px;width:640px">&nbsp;</div>
+</div>
